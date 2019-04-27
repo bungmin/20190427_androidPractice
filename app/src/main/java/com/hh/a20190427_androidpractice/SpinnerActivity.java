@@ -47,6 +47,15 @@ public class SpinnerActivity extends AppCompatActivity {
             }
         });
 
+        act.confirmBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int selectedPosition = act.pizzaStoreSpinner.getSelectedItemPosition();
+
+                String selectedPizzaStoreName = pizzaStores.get(selectedPosition).storeName;
+                Toast.makeText(SpinnerActivity.this, String.format("%d", selectedPosition),Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
